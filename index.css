@@ -6,18 +6,159 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.navbar {
-  width: 100%;
-  height: 50px;
-  background-color: black;
-  position: fixed;
-}
+/*Sidebar*/
 
 .sidebar {
   width: 50px;
   height: 100%;
   background-color: black;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  align-items: center;
+}
+
+.left-menu-icon {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+/*Main*/
+
+.container {
+  min-height: calc(100vh - 50px);
+  background-color: #151515;
+  color: white;
+}
+
+.content-container {
+  margin-left: 50px;
+}
+
+.featured-content {
+  height: 50vh;
+  padding: 50px;
+}
+.featured-img {
+  width: 200px;
+}
+
+.featured-desc {
+  width: 500px;
+  color: lightgray;
+  margin: 30px 0;
+}
+
+.featured-btn {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+}
+
+.movie-list-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.movie-list-container {
+  padding: 0 20px;
+}
+
+.movie-list {
+  display: flex;
+  height: 300px;
+  align-items: center;
+  transform: translateX(0px);
+  transition: all 1s ease-in-out;
+}
+
+.movie-list-item {
+  margin-right: 20px;
+  transition: all 1s ease-in-out;
+  position: relative;
+}
+
+.movie-list-item:hover .movie-list-item-img {
+  transform: scale(1.2);
+  margin: 0 30px;
+  opacity: 0.5;
+}
+.movie-list-item:hover .movie-list-item-title,
+.movie-list-item:hover .movie-list-item-desc,
+.movie-list-item:hover .movie-list-item-btn {
+  opacity: 1;
+}
+
+.movie-list-item-img {
+  width: 270px;
+  height: 200px;
+  object-fit: fill;
+  transition: all 1s ease-in-out;
+  border-radius: 20px;
+}
+
+.movie-list-item-title {
+  background-color: #333;
+  padding: 0 10px;
+  font-size: 32px;
+  font-weight: bold;
   position: absolute;
+  top: 10%;
+  left: 50px;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.movie-list-item-desc {
+  background-color: #333;
+  padding: 10px;
+  font-size: 16px;
+  width: 230px;
+  position: absolute;
+  top: 30%;
+  left: 10px;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.movie-list-item-btn {
+  background-color: green;
+  padding: 10px;
+  color: white;
+  position: absolute;
+  bottom: 9px;
+  left: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.arrow {
+  font-size: 120px;
+  position: absolute;
+  top: 90px;
+  right: 0;
+  color: lightgray;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+/* Navbar */
+
+.navbar {
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  position: sticky;
 }
 
 .navbar-container {
@@ -60,10 +201,11 @@ body {
   flex: 2;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .profile-text-container {
-  margin-left: 20px;
+  margin: 0 20px;
 }
 
 .profil-picture {
@@ -74,8 +216,26 @@ body {
 }
 
 .toggle {
-  width: 50px;
-  height: 100%;
+  width: 40px;
+  height: 20px;
   background-color: white;
   border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+
+.toogle-icon {
+  color: goldenrod;
+}
+
+.toogle-ball {
+  width: 18px;
+  height: 18px;
+  background-color: black;
+  position: absolute;
+  right: 1px;
+  border-radius: 50%;
+  cursor: pointer;
 }
